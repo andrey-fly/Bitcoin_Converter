@@ -22,4 +22,16 @@ struct CoinManager {
             task.resume()
         }
     }
+    
+    func parseJSON(_ data: Data) -> Double? {
+        
+        let decoder = JSONDecoder()
+        do {
+            let decodedData = try decoder.decode(CoinData.self, from: data)
+            return decodedData.price
+        } catch {
+            print(error)
+            return nil
+        }
+    }
 }
