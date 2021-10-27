@@ -1,5 +1,5 @@
 import Foundation
 
 struct CoinData: Codable {
-    let price: Double
+    let rate: Double
 }
